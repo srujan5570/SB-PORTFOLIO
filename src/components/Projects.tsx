@@ -11,7 +11,7 @@ const projects = [
     tags: ['Flutter', 'Dart', 'Firebase', 'Nutrition', 'Health Tech', 'Mobile App'],
     icon: <HiDeviceTablet size={28} />,
     color: 'var(--magenta)',
-    links: { website: '/v-nutrilife-app.html', internalTesting: 'https://play.google.com/apps/internaltest/4701581662108778000' },
+    links: { website: '/SB-PORTFOLIO/v-nutrilife-app.html', internalTesting: 'https://play.google.com/apps/internaltest/4701581662108778000' },
   },
   {
     title: 'UPSC Cart',

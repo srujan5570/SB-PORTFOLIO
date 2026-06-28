@@ -190,7 +190,7 @@ export default function Hero() {
               <HiMail /> Connect With Me
             </motion.a>
             <motion.a
-              href="/resume.html"
+              href="/SB-PORTFOLIO/resume.html"
               target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
