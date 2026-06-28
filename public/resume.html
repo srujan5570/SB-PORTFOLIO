@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srujan Banavath - Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #1a1a2e;
+  }
+  .resume {
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a0a1f 0%, #1a1a3e 50%, #0d2b1f 100%);
+    color: #fff;
+    padding: 40px 48px 32px;
+  }
+  .header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .header .title {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 16px;
+  }
+  .header .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+  .header .contact a {
+    color: #00d4ff;
+    text-decoration: none;
+  }
+  .header .contact a:hover { text-decoration: underline; }
+  .body { padding: 32px 48px 40px; }
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #00d4ff;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #eef0f5;
+  }
+  .section-title.green { color: #2d8a4e; }
+  .section-title.purple { color: #7b2ff7; }
+
+  .summary { font-size: 14px; line-height: 1.7; color: #444; }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+  .skill-cat { margin-bottom: 4px; }
+  .skill-cat .cat-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: inline;
+  }
+  .skill-cat .cat-items {
+    font-size: 12px;
+    color: #666;
+    display: inline;
+  }
+
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .edu-item:last-child { border-bottom: none; }
+  .edu-item .left .inst { font-size: 14px; font-weight: 600; color: #1a1a2e; }
+  .edu-item .left .degree { font-size: 12px; color: #666; margin-top: 2px; }
+  .edu-item .right { text-align: right; }
+  .edu-item .right .gpa { font-size: 13px; font-weight: 700; color: #2d8a4e; }
+  .edu-item .right .period { font-size: 12px; color: #888; margin-top: 2px; }
+
+  .exp-item { margin-bottom: 20px; }
+  .exp-item:last-child { margin-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .exp-header .role { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+  .exp-header .company { font-size: 13px; color: #2d8a4e; font-weight: 600; }
+  .exp-header .period { font-size: 12px; color: #888; }
+  .exp-details {
+    list-style: none;
+    padding-left: 0;
+  }
+  .exp-details li {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .exp-details li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2d8a4e;
+  }
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .exp-tags span {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    background: #eaf6ed;
+    color: #2d8a4e;
+  }
+
+  .proj-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .proj-item:last-child { border-bottom: none; }
+  .proj-item .proj-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  .proj-item .proj-sub {
+    font-size: 12px;
+    color: #2d8a4e;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .proj-item .proj-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .proj-item .proj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .proj-item .proj-tags span {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    background: #eef0f5;
+    color: #555;
+  }
+  .proj-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+  .proj-links a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .proj-links a:hover { text-decoration: underline; }
+
+  .download-bar {
+    text-align: center;
+    padding: 16px;
+    background: #f8f9fc;
+    border-top: 1px solid #eef0f5;
+  }
+  .download-bar button {
+    padding: 10px 28px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+  }
+  .download-bar button:hover { opacity: 0.9; }
+
+  @media print {
+    body { padding: 0; background: #fff; }
+    .resume { box-shadow: none; border-radius: 0; max-width: 100%; }
+    .header { padding: 32px 40px 24px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .body { padding: 24px 40px; }
+    .download-bar { display: none; }
+  }
+  @media (max-width: 600px) {
+    .header { padding: 24px 20px; }
+    .header h1 { font-size: 26px; }
+    .body { padding: 20px; }
+    .skill-grid { grid-template-columns: 1fr; }
+    .exp-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>Srujan Banavath</h1>
+    <div class="title">Fullstack Developer &amp; Founder</div>
+    <div class="contact">
+      <span>srujanbanoth0@gmail.com</span>
+      <span>+91 9133778923</span>
+      <span>Delhi, India</span>
+      <a href="https://linkedin.com/in/Banavath-Srujan5191">LinkedIn</a>
+      <a href="https://github.com/srujan5570">GitHub</a>
+      <a href="https://mytimes.app/">My Time</a>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="section">
+      <div class="section-title">Summary</div>
+      <p class="summary">
+        Founder &amp; Fullstack Developer with expertise in building cross-platform applications, 
+        data-driven dashboards, and interactive web experiences. Founded My Time, a startup building 
+        next-gen time and financial management apps with 16+ apps launched on the Play Store. 
+        B.Tech graduate from IIIT Nagpur with internship experience at Paninian India, Big Bulls, 
+        and Tata Group. Passionate about turning complex problems into elegant, user-centric solutions.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Technologies</div>
+      <div class="skill-grid">
+        <div class="skill-cat"><span class="cat-name">Languages:</span> <span class="cat-items">Python, JavaScript, Flutter, Dart, Java, C, C++, SQL, PHP, HTML, CSS</span></div>
+        <div class="skill-cat"><span class="cat-name">Frameworks:</span> <span class="cat-items">React, React Native, Node.js, .NET, Django, Tailwind CSS, Chakra UI, Langchain</span></div>
+        <div class="skill-cat"><span class="cat-name">Libraries:</span> <span class="cat-items">Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Plotly, Socket.IO, WebRTC</span></div>
+        <div class="skill-cat"><span class="cat-name">Databases:</span> <span class="cat-items">MongoDB, Firebase, MySQL, PostgreSQL</span></div>
+        <div class="skill-cat"><span class="cat-name">Tools:</span> <span class="cat-items">Power BI, Tableau, Git, GitHub, Docker, AWS, Excel, Jupyter, VSCode</span></div>
+        <div class="skill-cat"><span class="cat-name">Platforms:</span> <span class="cat-items">Windows, Ubuntu, Linux, Android</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title green">Education</div>
+      <div class="edu-item">
+        <div class="left"><div class="inst">Indian Institute of Information Technology, Nagpur</div><div class="degree">B.Tech</div></div>
+        <div class="right"><div class="gpa">GPA: 5.6</div><div class="period">2021 - 2025</div></div>
+      </div>
+      <div class="edu-item">
+        <div class="left"><div class="inst">Board of Intermediate Education, Hyderabad</div><div class="degree">Intermediate</div></div>
+        <div class="right"><div class="gpa">GPA: 8.9</div><div class="period">2019 - 2021</div></div>
+      </div>
+      <div class="edu-item">
+        <div class="left"><div class="inst">Board of Secondary School Education, Nizamabad</div><div class="degree">SSC</div></div>
+        <div class="right"><div class="gpa">GPA: 9.2</div><div class="period">2018 - 2019</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title green">Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="role">JavaScript Developer Intern</div><div class="company">Paninian India Pvt. Ltd.</div></div>
+          <div class="period">Nov 2025 - Present</div>
+        </div>
+        <ul class="exp-details">
+          <li>Working on JavaScript development projects for aerospace industry applications</li>
+          <li>Building scalable web applications with modern JavaScript frameworks</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="role">Finance and Research Analyst Intern</div><div class="company">Big Bulls</div></div>
+          <div class="period">Jul 2024 - Dec 2024</div>
+        </div>
+        <ul class="exp-details">
+          <li>Built and maintained finance dashboards with frontend/backend integration</li>
+          <li>Improved financial data systems through preprocessing and database optimization</li>
+          <li>Achieved 82% project completion with high ratings in problem-solving</li>
+        </ul>
+        <div class="exp-tags"><span>React</span><span>Node.js</span><span>SQL</span><span>Data Preprocessing</span></div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="role">Data Visualization Intern</div><div class="company">Tata Group</div></div>
+          <div class="period">Sep 2023 - Oct 2023</div>
+        </div>
+        <ul class="exp-details">
+          <li>Designed dynamic dashboards using Power BI and Tableau</li>
+          <li>Applied visual storytelling to present KPIs for cross-functional teams</li>
+          <li>Practiced business framing techniques to align visualizations with strategic goals</li>
+        </ul>
+        <div class="exp-tags"><span>Power BI</span><span>Tableau</span><span>Excel</span><span>Data Storytelling</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title purple">Projects</div>
+
+      <div class="proj-item">
+        <div class="proj-title">My Time</div>
+        <div class="proj-sub">Founder &amp; CEO — My Time</div>
+        <div class="proj-desc">Founded and leading a startup building next-gen time and financial management apps. Overseeing development of 16+ apps including My Time (productivity), Easy Money (finance), and Health Tracker. Serving 1000+ users.</div>
+        <div class="proj-tags"><span>Startup</span><span>Flutter</span><span>Firebase</span><span>Product Management</span></div>
+        <div class="proj-links"><a href="https://mytimes.app/" target="_blank">mytimes.app</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-title">V-NutriLife</div>
+        <div class="proj-sub">Nutrition &amp; Health App</div>
+        <div class="proj-desc">Beta-stage nutrition app with personalized diet plans, nutrition tracking, health tips, and consultations. Features condition-specific diets for endometriosis, PCOS, and weight loss.</div>
+        <div class="proj-tags"><span>Flutter</span><span>Dart</span><span>Firebase</span><span>Health Tech</span></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-title">UPSC Cart</div>
+        <div class="proj-sub">Student Marketplace App</div>
+        <div class="proj-desc">Full-fledged marketplace for UPSC aspirants to buy/sell books, notes, furniture, electronics, and find rooms. Features in-app chat, zero-commission hyper-local discovery.</div>
+        <div class="proj-tags"><span>Flutter</span><span>Firebase</span><span>In-App Chat</span><span>Google Pay</span></div>
+        <div class="proj-links"><a href="https://upsccart.shop/" target="_blank">upsccart.shop</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-title">Easy Money</div>
+        <div class="proj-sub">Financial Tracking App</div>
+        <div class="proj-desc">Cross-platform app for real-time financial tracking with Firebase Firestore. Features secure authentication, admin dashboard, ad monetization, and social sharing.</div>
+        <div class="proj-tags"><span>Flutter</span><span>Firebase</span><span>Google Play</span><span>Google Mobile Ads</span></div>
+        <div class="proj-links"><a href="https://play.google.com/store/apps/details?id=com.banav.easymoney" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-title">Communication App</div>
+        <div class="proj-sub">Real-Time Messaging Platform</div>
+        <div class="proj-desc">Secure messaging app with WebRTC video/audio calls, JWT authentication, MongoDB schemas, and &lt;100ms latency with typing indicators and read receipts.</div>
+        <div class="proj-tags"><span>React Native</span><span>Node.js</span><span>Socket.IO</span><span>WebRTC</span><span>MongoDB</span></div>
+        <div class="proj-links"><a href="https://github.com/srujan5570/Communications-App" target="_blank">GitHub</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-title">Basket Grab</div>
+        <div class="proj-sub">Smart Shopping Platform</div>
+        <div class="proj-desc">E-commerce platform with instant checkout, inventory management, and payment processing. Mobile-first responsive design.</div>
+        <div class="proj-tags"><span>Google Sites</span><span>E-commerce</span><span>Responsive Design</span></div>
+        <div class="proj-links"><a href="https://bascket-grab.web.app/" target="_blank">Website</a> <a href="https://github.com/srujan5570/basket-grab" target="_blank">GitHub</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-bar">
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</div>
+</body>
+</html>
