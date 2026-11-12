@@ -7,11 +7,11 @@ const projects = [
   {
     title: 'V-NutriLife',
     subtitle: 'Nutrition & Health App',
-    description: 'A beta-stage nutrition and health app offering personalized diet plans, nutrition tracking, health tips, and direct consultations with clinical dietitians. Features condition-specific diets (endometriosis, PCOS, weight loss), meal logging, water tracking, and seasonal health guides.',
+    description: 'A live nutrition and health app offering personalized diet plans, nutrition tracking, health tips, and direct consultations with clinical dietitians. Features condition-specific diets (endometriosis, PCOS, weight loss), meal logging, water tracking, and seasonal health guides.',
     tags: ['Flutter', 'Dart', 'Firebase', 'Nutrition', 'Health Tech', 'Mobile App'],
     icon: <HiDeviceTablet size={28} />,
     color: 'var(--magenta)',
-    links: { website: '/SB-PORTFOLIO/v-nutrilife-app.html', internalTesting: 'https://play.google.com/apps/internaltest/4701581662108778000' },
+    links: { website: '/SB-PORTFOLIO/v-nutrilife-app.html', playStore: 'https://play.google.com/store/apps/details?id=com.vnutrilife.app' },
   },
   {
     title: 'UPSC Cart',

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { HiArrowDown, HiMail, HiDownload } from 'react-icons/hi'
 import { FiGithub, FiLinkedin, FiExternalLink } from 'react-icons/fi'
 
-const roles = ['Fullstack Developer', 'App Developer', 'Data Enthusiast', 'Problem Solver']
+const roles = ['Fullstack Developer', 'Flutter App Developer', 'Founder @ My Time']
 
 const glitchKeyframes = {
   glitch1: { '0%': { clipPath: 'inset(0 0 80% 0)' }, '20%': { clipPath: 'inset(20% 0 60% 0)' }, '40%': { clipPath: 'inset(40% 0 40% 0)' }, '60%': { clipPath: 'inset(60% 0 20% 0)' }, '80%': { clipPath: 'inset(80% 0 0 0)' }, '100%': { clipPath: 'inset(0 0 80% 0)' } },
@@ -57,24 +57,27 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1, duration: 0.5 }}
           >
-            <span style={{
-              display: 'inline-block',
-              padding: '0.4rem 1.2rem',
+            <span className="hero-badge" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.4rem 1.1rem',
               borderRadius: 50,
               fontSize: '0.75rem',
               fontFamily: 'var(--font-mono)',
-              letterSpacing: 3,
-              color: 'var(--cyan)',
-              border: '1px solid rgba(0,212,255,0.3)',
-              background: 'rgba(0,212,255,0.05)',
+              letterSpacing: 1,
+              color: 'var(--text-secondary)',
+              border: '1px solid rgba(0,255,136,0.3)',
+              background: 'rgba(0,255,136,0.06)',
               marginBottom: '1.5rem',
-              animation: 'pulse-border 2s ease-in-out infinite',
+              maxWidth: '100%',
             }}>
-              SYSTEM ONLINE // PORTFOLIO v2.0
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#00ff88', boxShadow: '0 0 10px #00ff88', flexShrink: 0 }} />
+              Open to Fullstack &amp; Mobile roles
             </span>
           </motion.div>
 
-          <h1 style={{
+          <h1 className="hero-title" style={{
             fontSize: 'clamp(2.5rem, 8vw, 5.5rem)',
             fontWeight: 700,
             lineHeight: 1.1,
@@ -97,25 +100,6 @@ export default function Hero() {
               }}
             >
               Srujan Banavath
-              <motion.span
-              animate={{ x: [0, 2, -1, 0], opacity: [0, 0.5, 0.3, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'linear-gradient(135deg, #ff00e5 0%, #00d4ff 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  filter: 'blur(2px)',
-                  opacity: 0.3,
-                }}
-              >
-                Srujan Banavath
-              </motion.span>
             </motion.span>
           </h1>
 
@@ -135,23 +119,34 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
             style={{
+              color: 'var(--text-secondary)',
+              maxWidth: 620,
+              margin: '0 auto 0.6rem',
+              fontSize: '1rem',
+              lineHeight: 1.7,
+            }}
+          >
+            I build production mobile apps and web dashboards with Flutter, React and Firebase.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            style={{
               color: 'var(--text-muted)',
               maxWidth: 600,
               margin: '0 auto 2.5rem',
-              fontSize: '0.85rem',
+              fontSize: '0.8rem',
               lineHeight: 1.9,
               fontFamily: 'var(--font-mono)',
             }}
           >
-            <span style={{ color: 'var(--text-muted)' }}>{'<code>'}</span>
-            {' '}Building the future through fullstack development{' '}
-            <span style={{ color: 'var(--text-muted)' }}>{'</code>'}</span>
-            <br />
-            <span style={{ color: 'var(--cyan)', opacity: 0.6 }}>// </span>
-            <span style={{ color: 'var(--text-muted)' }}>Flutter · React · Python · Data</span>
+            Based in India · Remote friendly · B.Tech CSE, IIIT Nagpur
           </motion.p>
 
           <motion.div
+            className="hero-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.5 }}
@@ -159,14 +154,15 @@ export default function Hero() {
           >
             <motion.a
               href="#projects"
-              className="glow-btn"
+              className="glow-btn hero-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
             >
-              <FiExternalLink /> Explore My Work
+              <FiExternalLink /> View Projects
             </motion.a>
             <motion.a
               href="#contact"
+              className="hero-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               style={{
@@ -187,11 +183,12 @@ export default function Hero() {
               onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0,212,255,0.15)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(0,212,255,0.2)' }}
               onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,212,255,0.05)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0,212,255,0.1)' }}
             >
-              <HiMail /> Connect With Me
+              <HiMail /> Contact Me
             </motion.a>
             <motion.a
               href="/SB-PORTFOLIO/resume.html"
               target="_blank"
+              className="hero-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               style={{
@@ -230,7 +227,8 @@ export default function Hero() {
               <motion.a
                 key={link.label}
                 href={link.href}
-                target="_self"
+                aria-label={link.label}
+                target={link.href.startsWith('http') ? '_blank' : '_self'}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 whileHover={{ y: -4, scale: 1.1 }}
                 initial={{ opacity: 0, y: 20 }}

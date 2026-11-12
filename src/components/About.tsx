@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { HiAcademicCap, HiLocationMarker } from 'react-icons/hi'
 
 const education = [
-  { institution: 'Indian Institute of Information Technology, Nagpur', degree: 'B.Tech', gpa: '5.6', period: '2021 - 2025' },
+  { institution: 'Indian Institute of Information Technology, Nagpur', degree: 'B.Tech, Computer Science & Engineering', gpa: '', period: '2021 - 2025' },
   { institution: 'Board of Intermediate Education, Hyderabad', degree: 'Intermediate', gpa: '8.9', period: '2019 - 2021' },
   { institution: 'Board of Secondary School Education, Nizamabad', degree: 'SSC', gpa: '9.2', period: '2018 - 2019' },
 ]
@@ -57,12 +57,11 @@ export default function About() {
                 animation: 'gradient-slide 3s linear infinite',
               }} />
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.9, marginBottom: '1.5rem' }}>
-                I am a passionate <span style={{ color: 'var(--cyan)' }}>Fullstack Developer</span> and <span style={{ color: 'var(--cyan)' }}>Founder</span> with expertise in building
-                cross-platform applications, data-driven dashboards, and interactive web experiences. I thrive at the intersection
-                of technology and creativity, turning complex problems into elegant, user-centric solutions.
+                I'm a fullstack developer and the founder of <span style={{ color: 'var(--cyan)' }}>My Time</span>, where I design and ship products end to end —
+                from Flutter interfaces and Firebase backends to React dashboards and Play Store releases. I care about clean architecture,
+                fast load times, and interfaces people can use without a manual.
               </p>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.9, marginBottom: '2rem' }}>
-                I'm the Founder & CEO of <span style={{ color: 'var(--cyan)' }}>My Time</span>, a startup building next-gen time and financial management apps.
                 A B.Tech graduate from <span style={{ color: 'var(--magenta)' }}>IIIT Nagpur</span>, I've gained experience through internships at
                 <span style={{ color: 'var(--magenta)' }}> Paninian India </span>,
                 <span style={{ color: 'var(--magenta)' }}> Big Bulls</span>, and
@@ -71,7 +70,7 @@ export default function About() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
-                  { icon: <HiLocationMarker style={{ color: 'var(--cyan)' }} />, label: 'Delhi, India' },
+                  { icon: <HiLocationMarker style={{ color: 'var(--cyan)' }} />, label: 'India' },
                   { icon: <HiAcademicCap style={{ color: 'var(--magenta)' }} />, label: 'IIIT Nagpur — B.Tech' },
                 ].map((item, i) => (
                   <motion.div
@@ -141,23 +140,25 @@ export default function About() {
                       <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{edu.degree}</p>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.8 + i * 0.2, type: 'spring' }}
-                        style={{
-                          color: 'var(--cyan)',
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: '0.8rem',
-                          display: 'inline-block',
-                          padding: '0.2rem 0.6rem',
-                          borderRadius: 8,
-                          background: 'rgba(0,212,255,0.1)',
-                          border: '1px solid rgba(0,212,255,0.2)',
-                        }}
-                      >
-                        GPA: {edu.gpa}
-                      </motion.span>
+                      {edu.gpa && (
+                        <motion.span
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.8 + i * 0.2, type: 'spring' }}
+                          style={{
+                            color: 'var(--cyan)',
+                            fontFamily: 'var(--font-mono)',
+                            fontSize: '0.8rem',
+                            display: 'inline-block',
+                            padding: '0.2rem 0.6rem',
+                            borderRadius: 8,
+                            background: 'rgba(0,212,255,0.1)',
+                            border: '1px solid rgba(0,212,255,0.2)',
+                          }}
+                        >
+                          GPA: {edu.gpa}
+                        </motion.span>
+                      )}
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', marginTop: '0.3rem' }}>{edu.period}</p>
                     </div>
                   </div>

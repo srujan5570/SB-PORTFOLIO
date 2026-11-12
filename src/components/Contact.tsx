@@ -68,7 +68,7 @@ export default function Contact() {
                 {[
                   { icon: <HiMail />, label: 'Email', value: 'srujanbanoth0@gmail.com', href: 'mailto:srujanbanoth0@gmail.com' },
                   { icon: <HiPhone />, label: 'Phone', value: '+91 9133778923', href: 'tel:+919133778923' },
-                  { icon: <HiLocationMarker />, label: 'Location', value: 'Delhi, India', href: null },
+                  { icon: <HiLocationMarker />, label: 'Location', value: 'India', href: null },
                 ].map((info, i) => (
                   <motion.div
                     key={info.label}

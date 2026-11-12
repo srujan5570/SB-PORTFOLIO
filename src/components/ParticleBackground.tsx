@@ -4,7 +4,7 @@ import { Float, MeshDistortMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 
 function SoftParticles() {
-  const count = 1200
+  const count = useMemo(() => (window.matchMedia('(max-width: 768px)').matches ? 450 : 900), [])
   const meshRef = useRef<THREE.Points>(null!)
   const mouse = useRef(new THREE.Vector2(0, 0))
   const target = useRef(new THREE.Vector2(0, 0))
@@ -23,7 +23,7 @@ function SoftParticles() {
     }
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
     return geo
-  }, [])
+  }, [count])
 
   useEffect(() => {
     const onMouse = (e: MouseEvent) => {
@@ -114,6 +114,8 @@ function Scene() {
 }
 
 export default function ParticleBackground() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null
+
   return (
     <>
       <div style={{
@@ -126,7 +128,7 @@ export default function ParticleBackground() {
         pointerEvents: 'none',
         opacity: 0.6,
       }}>
-        <Canvas camera={{ position: [0, 0, 14], fov: 65 }}>
+        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 14], fov: 65 }}>
           <Scene />
         </Canvas>
       </div>

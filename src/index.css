@@ -12,8 +12,8 @@
   --cyan-glow: rgba(0, 212, 255, 0.3);
   --magenta-glow: rgba(255, 0, 229, 0.3);
   --text-primary: #e8e8ff;
-  --text-secondary: #8888bb;
-  --text-muted: #555577;
+  --text-secondary: #a9a9d0;
+  --text-muted: #8c8cb5;
   --gradient-1: linear-gradient(135deg, #00d4ff, #7b2ff7);
   --gradient-2: linear-gradient(135deg, #ff00e5, #7b2ff7);
   --gradient-text: linear-gradient(135deg, #00d4ff, #ff00e5);
@@ -211,5 +211,51 @@ a:hover {
   .section-title { font-size: 1.5rem !important; }
   .glass-card { padding: 1.2rem !important; }
   .glow-btn { padding: 0.6rem 1.2rem !important; font-size: 0.85rem !important; }
+}
+
+/* Hero responsiveness */
+@media (max-width: 640px) {
+  .hero-badge {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.5px !important;
+    padding: 0.35rem 0.8rem !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 11vw, 3rem) !important;
+    overflow-wrap: anywhere;
+  }
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .hero-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.75rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 

@@ -135,34 +135,6 @@ export default function Skills() {
                     </motion.span>
                   ))}
                 </div>
-
-                <div style={{ marginTop: '1.5rem', height: 4, borderRadius: 2, background: 'rgba(255,255,255,0.05)', overflow: 'hidden', position: 'relative' }}>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={inView ? { width: `${75 + Math.random() * 20}%` } : {}}
-                    transition={{ duration: 1.5, delay: i * 0.2 + 0.3, ease: 'easeOut' }}
-                    style={{
-                      height: '100%',
-                      borderRadius: 2,
-                      background: `linear-gradient(90deg, ${cat.color}, ${cat.color}44)`,
-                      boxShadow: `0 0 10px ${cat.color}30`,
-                      position: 'relative',
-                    }}
-                  >
-                    <motion.div
-                      animate={{ x: ['0%', '100%', '0%'] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        right: 0,
-                        width: 20,
-                        height: '100%',
-                        background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)`,
-                      }}
-                    />
-                  </motion.div>
-                </div>
               </motion.div>
             </ParallaxSection>
           ))}
